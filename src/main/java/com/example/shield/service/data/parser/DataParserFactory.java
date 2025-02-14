@@ -14,7 +14,7 @@ public class DataParserFactory {
     
         @Autowired
         XMLParser xmlDataParser;
-        JsonParser jsonDataParser;
+        JsonDataParser jsonDataParser;
     
     
         @PostConstruct
