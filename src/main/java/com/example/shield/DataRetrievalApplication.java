@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShieldApplication {
+public class DataRetrievalApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShieldApplication.class, args);
+		SpringApplication.run(DataRetrievalApplication.class, args);
 	}
 
 }

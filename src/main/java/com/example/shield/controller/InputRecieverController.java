@@ -1,13 +1,11 @@
-package org.springframework.samples.shield.controller;
+package com.example.shield.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.shield.consts.RestConsts;
-import org.springframework.samples.shield.model.InputMetadata;
-import org.springframework.samples.shield.service.dataRetrieval.DataRetrievalManager;
-import org.springframework.samples.shield.service.dataRetrieval.DataRetrievalServiceFactory;
-import org.springframework.samples.shield.service.dataRetrieval.IDataRetrievalService;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.shield.consts.RestConsts;
+import com.example.shield.model.file.InputMetadata;
+import com.example.shield.service.data.retrieval.DataRetrievalManager;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;

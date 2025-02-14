@@ -1,4 +1,4 @@
-package org.springframework.samples.shield.model;
+package com.example.shield.model.file;
 
 import lombok.Data;
 
@@ -6,4 +6,5 @@ import lombok.Data;
 public class InputMetadata {
     private SourceType sourceType;
     private String inputId;
+    private String inputFormat;
 }

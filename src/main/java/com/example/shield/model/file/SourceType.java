@@ -1,4 +1,4 @@
-package org.springframework.samples.shield.model;
+package com.example.shield.model.file;
 
 public enum SourceType {
 

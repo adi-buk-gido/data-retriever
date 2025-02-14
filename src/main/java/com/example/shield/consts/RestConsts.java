@@ -1,4 +1,4 @@
-package org.springframework.samples.shield.consts;
+package com.example.shield.consts;
 
 public class RestConsts {
 

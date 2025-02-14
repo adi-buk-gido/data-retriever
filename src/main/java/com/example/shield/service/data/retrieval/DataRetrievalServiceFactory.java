@@ -1,12 +1,13 @@
-package org.springframework.samples.shield.service.dataRetrieval;
+package com.example.shield.service.data.retrieval;
 
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.shield.model.SourceType;
 import org.springframework.stereotype.Component;
+
+import com.example.shield.model.file.SourceType;
 
 @Component
 public class DataRetrievalServiceFactory {
