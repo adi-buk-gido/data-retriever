@@ -2,10 +2,8 @@ package com.example.shield.service.data.retrieval;
 
 import java.io.InputStream;
 
-import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
@@ -32,7 +30,6 @@ public class S3DataService implements IDataRetrievalService {
 
 
     @Override
-    @PostConstruct
     public void connect() {
         log.info("Connecting to AWS S3...");
 
@@ -47,7 +44,6 @@ public class S3DataService implements IDataRetrievalService {
     }
 
     @Override
-    @PreDestroy
     public void disconnect() {
         if (s3Client != null) {
             log.info("Disconnecting from AWS S3...");
