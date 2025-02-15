@@ -33,7 +33,7 @@ public class DataRetrievalManager {
 
 
 
-
+    //TODO error handling
     public void processData(InputMetadata inputMetadata){
         IDataRetrievalService service = DataRetrievalServiceFactory.getService(inputMetadata.getSourceType());
         boolean isProcessed = validateNotProcessed(inputMetadata.getInputId());
@@ -44,6 +44,7 @@ public class DataRetrievalManager {
             log.debug("Connecting to source for file: {}", inputMetadata.getInputId());
             service.connect();
             InputStream fileStream = service.retrieveData(inputMetadata.getInputId());
+            service.disconnect();
             RoomConversation conversation = service.convertData(fileStream, inputMetadata.getInputFormat());
             saveDataToDb(conversation);
             setFileStatus(inputMetadata.getInputId(), FileProcessStatus.COMPLETED);
