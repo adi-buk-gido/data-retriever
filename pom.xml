@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>shield</artifactId>
+	<artifactId>data-retriever</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shield</name>
-	<description>Shield HW</description>
+	<name>data-retriever</name>
+	<description>data-retriever</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -88,29 +88,6 @@
     	<artifactId>spring-kafka</artifactId>
     	<version>2.9.0</version>
 	</dependency>
-	<!-- <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-		<version>4.13.2</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-		<version>4.13.2</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-		<version>3.12.4</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-junit-jupiter</artifactId>
-        <scope>test</scope>
-    </dependency-->
 	<dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
