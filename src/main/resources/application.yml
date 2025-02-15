@@ -22,6 +22,7 @@ logging:
 spring:
   kafka:
     bootstrap-servers: localhost:9092
+    topic: ${SPRING_KAFKA_TOPIC_ENRICHMENT}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

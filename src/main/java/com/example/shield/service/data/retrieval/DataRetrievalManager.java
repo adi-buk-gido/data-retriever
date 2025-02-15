@@ -23,19 +23,17 @@ public class DataRetrievalManager {
     private Map<UUID, RoomConversation> conversationsDB = new HashMap<>();
     
     @Autowired
-    DataRetrievalServiceFactory dataRetrievalServiceFactory;
+    private DataRetrievalServiceFactory dataRetrievalServiceFactory;
 
     @Autowired
-    DataFilesDaoImp dataFilesDaoImp;
+    private DataFilesDaoImp dataFilesDaoImp;
 
     @Autowired
-    KafkaProducerService kafkaProducerService;
+    private KafkaProducerService kafkaProducerService;
 
-
-
-    //TODO error handling
-    public void processData(InputMetadata inputMetadata){
-        IDataRetrievalService service = DataRetrievalServiceFactory.getService(inputMetadata.getSourceType());
+    public void processData(InputMetadata inputMetadata) throws Exception{
+        try {
+            IDataRetrievalService service = dataRetrievalServiceFactory.getService(inputMetadata.getSourceType());
         boolean isProcessed = validateNotProcessed(inputMetadata.getInputId());
         if(!isProcessed){
             log.debug("Processing file: {}", inputMetadata);
@@ -52,6 +50,10 @@ public class DataRetrievalManager {
         } else {
             log.debug("Input ID: {} already processed, skipping.. ", inputMetadata.getInputId());
             return;
+        }
+        } catch (Exception e){
+            log.error("Exception during process data", e);
+            throw new Exception(e);
         }
         
     }

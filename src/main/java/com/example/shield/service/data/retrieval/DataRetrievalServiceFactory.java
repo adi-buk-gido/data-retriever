@@ -35,7 +35,7 @@ public class DataRetrievalServiceFactory {
             );
         }
     
-        public static IDataRetrievalService getService(SourceType sourceType) {
+        public IDataRetrievalService getService(SourceType sourceType) {
             return serviceMap.get(sourceType);
     }
 
