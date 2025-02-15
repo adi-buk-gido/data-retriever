@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 import com.example.shield.model.file.SourceType;
 
+import software.amazon.awssdk.utils.ImmutableMap;
+
 @Component
 public class DataRetrievalServiceFactory {
 
@@ -26,7 +28,7 @@ public class DataRetrievalServiceFactory {
     
         @PostConstruct
         public void init(){
-            DataRetrievalServiceFactory.serviceMap = Map.of(
+            DataRetrievalServiceFactory.serviceMap = ImmutableMap.of(
                     SourceType.S3, s3DataService,
                     SourceType.SFTP, sftpDataService,
                     SourceType.LOCAL, localDataService

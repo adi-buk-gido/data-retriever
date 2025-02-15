@@ -12,6 +12,7 @@ import com.example.shield.dao.DataFilesDaoImp;
 import com.example.shield.model.conversation.RoomConversation;
 import com.example.shield.model.file.FileProcessStatus;
 import com.example.shield.model.file.InputMetadata;
+import com.example.shield.service.kafka.KafkaProducerService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,6 +27,9 @@ public class DataRetrievalManager {
 
     @Autowired
     DataFilesDaoImp dataFilesDaoImp;
+
+    @Autowired
+    KafkaProducerService kafkaProducerService;
 
 
 
@@ -43,7 +47,7 @@ public class DataRetrievalManager {
             RoomConversation conversation = service.convertData(fileStream, inputMetadata.getInputFormat());
             saveDataToDb(conversation);
             setFileStatus(inputMetadata.getInputId(), FileProcessStatus.COMPLETED);
-            //sendToExrichment();
+            kafkaProducerService.sendDataToEnrichment(conversation);
         } else {
             log.debug("Input ID: {} already processed, skipping.. ", inputMetadata.getInputId());
             return;

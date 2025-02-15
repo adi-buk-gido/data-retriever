@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import software.amazon.awssdk.utils.ImmutableMap;
+
 @Component
 public class DataParserFactory {
 
@@ -19,7 +21,7 @@ public class DataParserFactory {
     
         @PostConstruct
             public void init(){
-                DataParserFactory.parsers = Map.of(
+                DataParserFactory.parsers = ImmutableMap.of(
                     "xml", xmlDataParser,
                 "json", jsonDataParser
             );
